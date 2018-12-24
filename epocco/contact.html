@@ -41,16 +41,9 @@
         <div class="inner">
           <section>
             <p>Bize her yerden ulaşabilirsiniz.</p>
-            <p>
-              Donec eget ex magna. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Pellentesque venenatis dolor imperdiet dolor
-              mattis sagittis. Praesent rutrum sem diam, vitae egestas enim
-              auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit
-              amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a
-              elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
-              Curabitur sapien risus, commodo eget turpis at, elementum
-              convallis elit. Pellentesque enim turpis, hendrerit.
-            </p>
+            <body>
+              <div id="map" style="width: 600px; height: 400px"></div>
+            </body>
           </section>
           <section class="split">
             <section>
@@ -72,7 +65,7 @@
                 <span class="icon alt fa-home"></span>
                 <h3>Adres</h3>
                 <span>
-					Tınaztepe sokak, No:8/5<br />
+                  Tınaztepe sokak, No:8/5<br />
                   Çankaya, Ankara<br />
                   Türkiye
                 </span>
@@ -121,6 +114,28 @@
     </div>
 
     <!-- Scripts -->
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=345fbf47-588b-46e5-83ab-b8254ce2782b&lang=en_US"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      ymaps.ready(init);
+      var myMap, myPlacemark;
+
+      function init() {
+        myMap = new ymaps.Map("map", {
+          center: [39.866575, 32.856231],
+          zoom: 17
+        });
+
+        myPlacemark = new ymaps.Placemark([39.866575, 32.856231], {
+          hintContent: "Epocco",
+          balloonContent: "Epocco"
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+      }
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
