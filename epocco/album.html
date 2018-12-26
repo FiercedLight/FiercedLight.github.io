@@ -53,7 +53,7 @@
         <section id="one">
           <!-- Images used to open the lightbox -->
 
-          <div class="box alt">
+          <div id = "album" class="box alt">
             <div class="row gtr-50 gtr-uniform">
               <div class="col-4">
                 <span class="image fit"
@@ -61,8 +61,9 @@
                     src="images/frontpage/1.jpg"
                     alt=""
                     onclick="openModal();currentSlide(1)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <div class="col-4">
                 <span class="image fit"
@@ -70,8 +71,9 @@
                     src="images/frontpage/2.jpg"
                     alt=""
                     onclick="openModal();currentSlide(2)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <div class="col-4">
                 <span class="image fit"
@@ -79,8 +81,9 @@
                     src="images/frontpage/3.jpg"
                     alt=""
                     onclick="openModal();currentSlide(3)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <!-- Break -->
               <div class="col-4">
@@ -89,8 +92,9 @@
                     src="images/frontpage/4.jpg"
                     alt=""
                     onclick="openModal();currentSlide(4)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <div class="col-4">
                 <span class="image fit"
@@ -98,8 +102,9 @@
                     src="images/frontpage/5.jpg"
                     alt=""
                     onclick="openModal();currentSlide(5)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <div class="col-4">
                 <span class="image fit"
@@ -107,8 +112,9 @@
                     src="images/frontpage/6.jpg"
                     alt=""
                     onclick="openModal();currentSlide(6)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <!-- Break -->
               <div class="col-4">
@@ -117,8 +123,9 @@
                     src="images/frontpage/7.jpg"
                     alt=""
                     onclick="openModal();currentSlide(7)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <div class="col-4">
                 <span class="image fit"
@@ -126,8 +133,9 @@
                     src="images/frontpage/8.jpg"
                     alt=""
                     onclick="openModal();currentSlide(8)"
-                    class="hover-shadow"
-                /></span>
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
+                    /></span>
               </div>
               <div class="col-4">
                 <span class="image fit"
@@ -135,7 +143,8 @@
                     src="images/frontpage/9.jpg"
                     alt=""
                     onclick="openModal();currentSlide(9)"
-                    class="hover-shadow"
+                    class="hover-shadow disableselect disabledrag"
+                    oncontextmenu="return false"
                 /></span>
               </div>
             </div>
@@ -143,71 +152,16 @@
 
           <!-- The Modal/Lightbox -->
           <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-              <div class="mySlides">
-                <div class="numbertext">1 / 4</div>
-                <img src="images/frontpage/1.jpg" style="width:100%" />
-              </div>
+            <div class="modal-content" onclick="closeModal()">
 
-              <div class="mySlides">
-                <div class="numbertext">2 / 4</div>
-                <img src="images/frontpage/2.jpg" style="width:100%" />
-              </div>
+                <img class="mySlides modal-image" src="images/frontpage/1.jpg" style="width:100%" />
 
-              <div class="mySlides">
-                <div class="numbertext">3 / 4</div>
-                <img src="images/frontpage/3.jpg" style="width:100%" />
-              </div>
+                <img class="mySlides modal-image" src="images/frontpage/2.jpg" style="width:100%" />
 
-              <div class="mySlides">
-                <div class="numbertext">4 / 4</div>
-                <img src="images/frontpage/4.jpg" style="width:100%" />
-              </div>
+                <img class="mySlides modal-image" src="images/frontpage/3.jpg" style="width:100%" />
 
-              <!-- Next/previous controls -->
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <img class="mySlides modal-image" src="images/frontpage/4.jpg" style="width:100%" />
 
-              <!-- Caption text -->
-              <div class="caption-container"><p id="caption"></p></div>
-
-              <!-- Thumbnail image controls -->
-              <div class="column">
-                <img
-                  class="demo"
-                  src="img1.jpg"
-                  onclick="currentSlide(1)"
-                  alt="Nature"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo"
-                  src="img2.jpg"
-                  onclick="currentSlide(2)"
-                  alt="Snow"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo"
-                  src="img3.jpg"
-                  onclick="currentSlide(3)"
-                  alt="Mountains"
-                />
-              </div>
-
-              <div class="column">
-                <img
-                  class="demo"
-                  src="img4.jpg"
-                  onclick="currentSlide(4)"
-                  alt="Lights"
-                />
-              </div>
             </div>
           </div>
         </section>
@@ -255,20 +209,17 @@
       // Open the Modal
       function openModal() {
         document.getElementById("myModal").style.display = "block";
+        document.getElementById("album").style.display = "none";
       }
 
       // Close the Modal
       function closeModal() {
         document.getElementById("myModal").style.display = "none";
+        document.getElementById("album").style.display = "block";
       }
 
       var slideIndex = 1;
       showSlides(slideIndex);
-
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
 
       // Thumbnail image controls
       function currentSlide(n) {
@@ -278,8 +229,6 @@
       function showSlides(n) {
         var i;
         var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
         if (n > slides.length) {
           slideIndex = 1;
         }
@@ -289,12 +238,7 @@
         for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
         slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
       }
     </script>
 
