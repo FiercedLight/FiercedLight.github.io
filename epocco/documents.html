@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>Epocco - Belgelerimiz</title>
+    <title>Epocco - Albüm</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -27,26 +27,114 @@
 
       <!-- Menu -->
       <nav id="menu">
-        <ul class="links">
-          <li><a href="index.html">Anasayfa</a></li>
-          <li><a href="areas.html">Faaliyet Alanları</a></li>
-          <li><a href="references.html">Referanslar</a></li>
-          <li><a href="album.html">Albüm</a></li>
-          <li><a href="about.html">Hakkımızda ???</a></li>
-          <li><a href="contact.html">İletişim</a></li>
-        </ul>
-      </nav>
-
+          <ul class="links">
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="areas.html">Faaliyet Alanları</a></li>
+            <li><a href="album.html">Albüm</a></li>
+            <li><a href="references.html">Referanslar</a></li>
+            <li><a href="media.html">Medya</a></li>
+            <li><a href="documents.html">Belgelerimiz</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </nav>
       <!-- Banner -->
       <!-- Note: The "styleN" class below should match that of the header element. -->
       <section id="banner" class="style3">
-			<div class="inner">
-			  <span class="image">
-				<img src="images/frontpage/2.JPG" alt="" />
-			  </span>
-			  <header class="major"><h1>Belgelerimiz</h1></header>
-			</div>
-		  </section>
+        <div class="inner">
+          <span class="image">
+            <img src="images/frontpage/2.JPG" alt="" />
+          </span>
+          <header class="major"><h1>Belgelerimiz</h1></header>
+        </div>
+      </section>
+
+      <!-- Main -->
+      <div id="main" class="alt">
+        <!-- One -->
+        <section id="one">
+          <!-- Images used to open the lightbox -->
+          <div class="inner">
+            <div id="album" class="box alt">
+              <div class="row gtr-50 gtr-uniform">
+                <div class="col-3">
+                  <span class="image fit"
+                    ><img
+                      src="images/documents/Doc1.png"
+                      alt=""
+                      onclick="openModal();currentSlide(1)"
+                      class="hover-shadow disableselect disabledrag"
+                      oncontextmenu="return false"
+                  /></span>
+                </div>
+                <div class="col-3">
+                  <span class="image fit"
+                    ><img
+                      src="images/documents/Doc2.png"
+                      alt=""
+                      onclick="openModal();currentSlide(2)"
+                      class="hover-shadow disableselect disabledrag"
+                      oncontextmenu="return false"
+                  /></span>
+                </div>
+                <div class="col-3">
+                  <span class="image fit"
+                    ><img
+                      src="images/documents/Doc3.png"
+                      alt=""
+                      onclick="openModal();currentSlide(3)"
+                      class="hover-shadow disableselect disabledrag"
+                      oncontextmenu="return false"
+                  /></span>
+                </div>
+                <!-- Break -->
+                <div class="col-3">
+                  <span class="image fit"
+                    ><img
+                      src="images/documents/Doc4.png"
+                      alt=""
+                      onclick="openModal();currentSlide(4)"
+                      class="hover-shadow disableselect disabledrag"
+                      oncontextmenu="return false"
+                  /></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+              <div class="modal-content" onclick="closeModal()">
+                <img
+                  class="mySlides modal-image disableselect disabledrag"
+                  oncontextmenu="return false"
+                  src="images/documents/Doc1.png"
+                  style="width:100%"
+                />
+
+                <img
+                  class="mySlides modal-image disableselect disabledrag"
+                  oncontextmenu="return false"
+                  src="images/documents/Doc2.png"
+                  style="width:100%"
+                />
+
+                <img
+                  class="mySlides modal-image disableselect disabledrag"
+                  oncontextmenu="return false"
+                  src="images/documents/Doc3.png"
+                  style="width:100%"
+                />
+
+                <img
+                  class="mySlides modal-image disableselect disabledrag"
+                  oncontextmenu="return false"
+                  src="images/documents/Doc4.png"
+                  style="width:100%"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <!-- Footer -->
       <footer id="footer">
@@ -85,6 +173,43 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      // Open the Modal
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        //document.getElementById("album").style.display = "none";
+      }
+
+      // Close the Modal
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        //document.getElementById("album").style.display = "block";
+      }
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+    </script>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
