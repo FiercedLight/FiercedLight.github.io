@@ -3616,7 +3616,7 @@ body.is-preload #header.alt {
 
 @media screen and (max-width: 480px) {
   #header .logo span {
-    display: none;
+    display: inherit;
   }
 
   #header nav a[href="#menu"] {
@@ -3829,7 +3829,7 @@ body.is-preload #banner > .inner {
     margin-bottom: -2.75em;
     max-height: none;
     min-height: 0;
-    top: -2.75em;
+    top: 0;
   }
 
   #banner h1 {
