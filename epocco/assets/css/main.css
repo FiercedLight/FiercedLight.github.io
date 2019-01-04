@@ -3712,11 +3712,11 @@ body.is-preload #header.alt {
 }
 
 #banner > .inner header {
-  width: auto;
+  width: 90%;
 }
 
 #banner > .inner header > :first-child {
-  width: auto;
+  width: 90%;
 }
 
 #banner > .inner header > :first-child:after {
@@ -3749,6 +3749,14 @@ body.is-preload #header.alt {
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
+}
+
+#banner > .inner .content p2 {
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #e68137;
 }
 
 #banner.major {
