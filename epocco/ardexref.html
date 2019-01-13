@@ -27,16 +27,16 @@
 
       <!-- Menu -->
       <nav id="menu">
-          <ul class="links">
-            <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="areas.html">Faaliyet Alanları</a></li>
-            <li><a href="album.html">Albüm</a></li>
-            <li><a href="references.html">Referanslar</a></li>
-            <li><a href="media.html">Medya</a></li>
-            <li><a href="documents.html">Belgelerimiz</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-          </ul>
-        </nav>
+        <ul class="links">
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="areas.html">Faaliyet Alanları</a></li>
+          <li><a href="album.html">Albüm</a></li>
+          <li><a href="references.html">Referanslar</a></li>
+          <li><a href="media.html">Medya</a></li>
+          <li><a href="documents.html">Belgelerimiz</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </nav>
 
       <!-- Banner -->
       <!-- Note: The "styleN" class below should match that of the header element. -->
@@ -293,5 +293,15 @@
         content.style.maxHeight = content.scrollHeight + "px";
       }
     });
+  }
+
+  {
+    coll[0].classList.toggle("active");
+    var content = coll[0].nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
   }
 </script>

@@ -3659,7 +3659,7 @@ body.is-preload #header.alt {
   background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
-  height: 60vh;
+  height: 50vh;
   margin-bottom: -3.25em;
   max-height: 32em;
   min-height: 22em;
@@ -3708,11 +3708,12 @@ body.is-preload #header.alt {
 }
 
 #banner > .inner .image {
+  width: 70%;
   display: none;
 }
 
 #banner > .inner header {
-  width: 90%;
+  width: 70%;
 }
 
 #banner > .inner header > :first-child {
@@ -3752,15 +3753,20 @@ body.is-preload #header.alt {
 }
 
 #banner > .inner .content p2 {
-  font-size: 0.7em;
+  font-size: 1.2em;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #e68137;
+  line-height: 150%;
+}
+
+#banner > .inner .major h1 {
+  line-height: 150%;
 }
 
 #banner.major {
-  height: 75vh;
+    height: 75vh;
   min-height: 30em;
   max-height: 50em;
 }
@@ -3828,13 +3834,17 @@ body.is-preload #banner > .inner {
   #banner {
     background-attachment: scroll;
   }
+
+  #banner > .inner .content p2 {
+    font-size: 1.2em;
+  }
 }
 
 @media screen and (max-width: 736px) {
   #banner {
     padding: 5em 0 1em 0;
-    height: auto;
-    margin-bottom: -2.75em;
+    height: 40vh;
+    margin-bottom: 0;
     max-height: none;
     min-height: 0;
     top: 0;
@@ -3845,12 +3855,12 @@ body.is-preload #banner > .inner {
   }
 
   #banner > .inner .content {
-    display: block;
+    /* display: block; */
+    margin-bottom: 4em;
   }
 
   #banner > .inner .content > * {
     margin-right: 0;
-    margin-bottom: 2em;
   }
 
   #banner.major {
@@ -3858,11 +3868,16 @@ body.is-preload #banner > .inner {
     min-height: 0;
     max-height: none;
   }
+
+  #banner > .inner .content p2 {
+    font-size: 0.7em;
+  }
 }
 
 @media screen and (max-width: 480px) {
   #banner {
     padding: 6em 0 2em 0;
+    height: 10em;
   }
 
   #banner > .inner .content p br {
@@ -3871,6 +3886,18 @@ body.is-preload #banner > .inner {
 
   #banner.major {
     padding: 8em 0 4em 0;
+  }
+
+  #banner > .inner .content p2 {
+    font-size: 0.5em;
+  }
+
+  #banner > .inner .image {
+    width: 70%;
+  }
+
+  #banner > .inner header {
+    width: 90%;
   }
 }
 
@@ -3893,6 +3920,40 @@ body.is-preload #banner > .inner {
   margin: 0 auto;
   max-width: 65em;
   width: calc(100% - 6em);
+}
+
+#main > * > .inner h1 {
+  font-size: 1.9em;
+  font-weight: 900;
+}
+
+#main > * > .inner h2 {
+  font-size: 1.4em;
+  font-weight: 800;
+}
+
+#main > * > .inner h3 {
+  font-size: 1.07em;
+  font-weight: 700;
+}
+
+#main > * > .inner h4 {
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+#main > * > .inner h5 {
+  font-size: 0.83em;
+  font-weight: bolder;
+}
+
+#main > * > .inner h6 {
+  font-size: 0.75em;
+  font-weight: bolder;
+}
+
+#main > * > .inner p {
+  font-size: 1em;
 }
 
 @media screen and (max-width: 736px) {
@@ -3959,7 +4020,8 @@ body.is-preload #banner > .inner {
 @media screen and (max-width: 980px) {
   #contact > .inner {
     display: block;
-  }
+    padding: 2em !important;
+}
 
   #contact > .inner > :nth-child(2n - 1) {
     padding: 4em 0 2em 0;
