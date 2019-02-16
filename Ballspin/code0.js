@@ -178,7 +178,7 @@ gdjs.GameCode.GDBasketRObjects1.createFrom(runtimeScene.getObjects("BasketR"));
 gdjs.GameCode.GDBasketTriggerObjects1.createFrom(runtimeScene.getObjects("BasketTrigger"));
 {runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(2);
 }{for(var i = 0, len = gdjs.GameCode.GDBasketObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDBasketObjects1[i].setPosition(gdjs.randomInRange(100, 200),gdjs.randomInRange(100, 500));
+    gdjs.GameCode.GDBasketObjects1[i].setPosition(gdjs.randomInRange(100, 260),gdjs.randomInRange(100, 500));
 }
 }{for(var i = 0, len = gdjs.GameCode.GDBasketRObjects1.length ;i < len;++i) {
     gdjs.GameCode.GDBasketRObjects1[i].setPosition((( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointX("")) + 16 + 32 + (80 / (gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(0)) + 3)),(( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointY("")));
