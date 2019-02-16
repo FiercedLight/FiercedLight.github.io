@@ -7,30 +7,176 @@ gdjs.GameCode.GDBasketRObjects1_1final = [];
 
 gdjs.GameCode.GDBallObjects1= [];
 gdjs.GameCode.GDBallObjects2= [];
+gdjs.GameCode.GDBallObjects3= [];
 gdjs.GameCode.GDWallObjects1= [];
 gdjs.GameCode.GDWallObjects2= [];
+gdjs.GameCode.GDWallObjects3= [];
 gdjs.GameCode.GDBasketRObjects1= [];
 gdjs.GameCode.GDBasketRObjects2= [];
+gdjs.GameCode.GDBasketRObjects3= [];
 gdjs.GameCode.GDBasketObjects1= [];
 gdjs.GameCode.GDBasketObjects2= [];
+gdjs.GameCode.GDBasketObjects3= [];
 gdjs.GameCode.GDScoreTextObjects1= [];
 gdjs.GameCode.GDScoreTextObjects2= [];
+gdjs.GameCode.GDScoreTextObjects3= [];
 gdjs.GameCode.GDBasketTriggerObjects1= [];
 gdjs.GameCode.GDBasketTriggerObjects2= [];
+gdjs.GameCode.GDBasketTriggerObjects3= [];
 gdjs.GameCode.GDBasketNetObjects1= [];
 gdjs.GameCode.GDBasketNetObjects2= [];
+gdjs.GameCode.GDBasketNetObjects3= [];
+gdjs.GameCode.GDDebugButtonObjects1= [];
+gdjs.GameCode.GDDebugButtonObjects2= [];
+gdjs.GameCode.GDDebugButtonObjects3= [];
 
 gdjs.GameCode.conditionTrue_0 = {val:false};
 gdjs.GameCode.condition0IsTrue_0 = {val:false};
 gdjs.GameCode.condition1IsTrue_0 = {val:false};
 gdjs.GameCode.condition2IsTrue_0 = {val:false};
+gdjs.GameCode.condition3IsTrue_0 = {val:false};
 gdjs.GameCode.conditionTrue_1 = {val:false};
 gdjs.GameCode.condition0IsTrue_1 = {val:false};
 gdjs.GameCode.condition1IsTrue_1 = {val:false};
 gdjs.GameCode.condition2IsTrue_1 = {val:false};
+gdjs.GameCode.condition3IsTrue_1 = {val:false};
 
 
-gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketObjects2Objects = Hashtable.newFrom({"Basket": gdjs.GameCode.GDBasketObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketRObjects2Objects = Hashtable.newFrom({"BasketR": gdjs.GameCode.GDBasketRObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects1});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects = Hashtable.newFrom({"BasketTrigger": gdjs.GameCode.GDBasketTriggerObjects1});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects1});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects = Hashtable.newFrom({"BasketTrigger": gdjs.GameCode.GDBasketTriggerObjects1});gdjs.GameCode.eventsList0xb2158 = function(runtimeScene) {
+gdjs.GameCode.userFunc0x6ebec8 = function(runtimeScene) {
+
+function getJsonFromUrl(url) {
+	if (!url) url = location.href;
+	var question = url.indexOf("?");
+	var hash = url.indexOf("#");
+	if (hash == -1 && question == -1) return {};
+	if (hash == -1) hash = url.length;
+	var query = question == -1 || hash == question + 1 ? url.substring(hash) :
+		url.substring(question + 1, hash);
+	var result = {};
+	query.split("&").forEach(function (part) {
+		if (!part) return;
+		part = part.split("+").join(" "); // replace every + with space, regexp-free version
+		var eq = part.indexOf("=");
+		var key = eq > -1 ? part.substr(0, eq) : part;
+		var val = eq > -1 ? decodeURIComponent(part.substr(eq + 1)) : "";
+		var from = key.indexOf("[");
+		if (from == -1) result[decodeURIComponent(key)] = val;
+		else {
+			var to = key.indexOf("]", from);
+			var index = decodeURIComponent(key.substring(from + 1, to));
+			key = decodeURIComponent(key.substring(0, from));
+			if (!result[key]) result[key] = [];
+			if (!index) result[key].push(val);
+			else result[key][index] = val;
+		}
+	});
+	return result;
+}
+
+console.log(window.location.href)
+// urlData = getJsonFromUrl("https://fiercedlight.github.io/Ballspin/index?imid=BAAAAJDGAACH6JsQ6vN1od2P6Z0&uid=278653063#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DNLyMVzXw-EEsLuuxxguh9UAeI2G7fKbNA11DIf5kc0M")
+urlData = getJsonFromUrl(window.location.href)
+
+var imid =runtimeScene.getVariables().get("imid")
+var uid =runtimeScene.getVariables().get("uid")
+
+imid.setString(urlData.imid)
+uid.setString(urlData.uid)
+
+
+
+};
+gdjs.GameCode.eventsList0x6962d8 = function(runtimeScene) {
+
+{
+
+
+gdjs.GameCode.userFunc0x6ebec8(runtimeScene);
+
+}
+
+
+}; //End of gdjs.GameCode.eventsList0x6962d8
+gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketObjects2Objects = Hashtable.newFrom({"Basket": gdjs.GameCode.GDBasketObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketRObjects2Objects = Hashtable.newFrom({"BasketR": gdjs.GameCode.GDBasketRObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects1});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects = Hashtable.newFrom({"BasketTrigger": gdjs.GameCode.GDBasketTriggerObjects1});gdjs.GameCode.userFunc0x66f718 = function(runtimeScene) {
+
+const scoreHttp = new XMLHttpRequest();
+const url = "https://api.telegram.org/bot709214656:AAGEOTZGdqU1_tsweWY6a23SuOtMcFC0E-I/setGameScore";
+var data = JSON.stringify({
+	"user_id": runtimeScene.getVariables().get("uid")._str,
+	"score": runtimeScene.getVariables().get("score")._value,
+	"inline_message_id":runtimeScene.getVariables().get("imid")._str
+});
+scoreHttp.open("POST", url);
+scoreHttp.setRequestHeader("Content-Type", "application/json");
+scoreHttp.send(data);
+scoreHttp.onreadystatechange = (e) => {
+	console.log(scoreHttp.responseText)
+}
+
+};
+gdjs.GameCode.eventsList0x665660 = function(runtimeScene) {
+
+{
+
+
+gdjs.GameCode.condition0IsTrue_0.val = false;
+{
+gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1)) == 1;
+}if (gdjs.GameCode.condition0IsTrue_0.val) {
+{runtimeScene.getVariables().getFromIndex(0).add(2);
+}}
+
+}
+
+
+{
+
+
+gdjs.GameCode.condition0IsTrue_0.val = false;
+{
+gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1)) == 6;
+}if (gdjs.GameCode.condition0IsTrue_0.val) {
+{runtimeScene.getVariables().getFromIndex(0).add(1);
+}}
+
+}
+
+
+{
+
+
+{
+{runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(0);
+}}
+
+}
+
+
+{
+
+
+gdjs.GameCode.userFunc0x66f718(runtimeScene);
+
+}
+
+
+}; //End of gdjs.GameCode.eventsList0x665660
+gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDDebugButtonObjects1Objects = Hashtable.newFrom({"DebugButton": gdjs.GameCode.GDDebugButtonObjects1});gdjs.GameCode.eventsList0xb2158 = function(runtimeScene) {
+
+{
+
+
+gdjs.GameCode.condition0IsTrue_0.val = false;
+{
+gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+}if (gdjs.GameCode.condition0IsTrue_0.val) {
+
+{ //Subevents
+gdjs.GameCode.eventsList0x6962d8(runtimeScene);} //End of subevents
+}
+
+}
+
 
 {
 
@@ -62,7 +208,7 @@ gdjs.GameCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonReleased
 }}
 if (gdjs.GameCode.condition1IsTrue_0.val) {
 {runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(3);
-}{runtimeScene.getGame().getVariables().getFromIndex(0).setNumber(0);
+}{runtimeScene.getVariables().getFromIndex(0).setNumber(0);
 }}
 
 }
@@ -291,7 +437,7 @@ if (gdjs.GameCode.condition1IsTrue_0.val) {
 {
 gdjs.GameCode.GDScoreTextObjects1.createFrom(runtimeScene.getObjects("ScoreText"));
 {for(var i = 0, len = gdjs.GameCode.GDScoreTextObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDScoreTextObjects1[i].setString(gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(0)));
+    gdjs.GameCode.GDScoreTextObjects1[i].setString(gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().getFromIndex(0)));
 }
 }}
 
@@ -317,58 +463,65 @@ gdjs.GameCode.GDBallObjects1.createFrom(runtimeScene.getObjects("Ball"));
 gdjs.GameCode.GDBasketTriggerObjects1.createFrom(runtimeScene.getObjects("BasketTrigger"));
 
 gdjs.GameCode.condition0IsTrue_0.val = false;
+gdjs.GameCode.condition1IsTrue_0.val = false;
 {
-{gdjs.GameCode.conditionTrue_1 = gdjs.GameCode.condition0IsTrue_0;
+gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects, gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects, false, runtimeScene, false);
+}if ( gdjs.GameCode.condition0IsTrue_0.val ) {
+{
+{gdjs.GameCode.conditionTrue_1 = gdjs.GameCode.condition1IsTrue_0;
 gdjs.GameCode.condition0IsTrue_1.val = false;
 gdjs.GameCode.condition1IsTrue_1.val = false;
 {
 gdjs.GameCode.condition0IsTrue_1.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1)) == 1;
-}if ( gdjs.GameCode.condition0IsTrue_1.val ) {
-{
-gdjs.GameCode.condition1IsTrue_1.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects, gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects, false, runtimeScene, false);
-}}
-gdjs.GameCode.conditionTrue_1.val = true && gdjs.GameCode.condition0IsTrue_1.val && gdjs.GameCode.condition1IsTrue_1.val;
+if( gdjs.GameCode.condition0IsTrue_1.val ) {
+    gdjs.GameCode.conditionTrue_1.val = true;
 }
-}if (gdjs.GameCode.condition0IsTrue_0.val) {
+}
+{
+gdjs.GameCode.condition1IsTrue_1.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1)) == 6;
+if( gdjs.GameCode.condition1IsTrue_1.val ) {
+    gdjs.GameCode.conditionTrue_1.val = true;
+}
+}
+{
+}
+}
+}}
+if (gdjs.GameCode.condition1IsTrue_0.val) {
 gdjs.GameCode.GDBasketNetObjects1.createFrom(runtimeScene.getObjects("BasketNet"));
 {gdjs.evtTools.sound.playSound(runtimeScene, "..\\..\\Desktop\\Misc\\click.wav", false, 100, 1);
-}{runtimeScene.getGame().getVariables().getFromIndex(0).add(2);
-}{runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(0);
 }{for(var i = 0, len = gdjs.GameCode.GDBasketNetObjects1.length ;i < len;++i) {
     gdjs.GameCode.GDBasketNetObjects1[i].setAnimationFrame(0);
 }
-}}
+}
+{ //Subevents
+gdjs.GameCode.eventsList0x665660(runtimeScene);} //End of subevents
+}
 
 }
 
 
 {
 
-gdjs.GameCode.GDBallObjects1.createFrom(runtimeScene.getObjects("Ball"));
-gdjs.GameCode.GDBasketTriggerObjects1.createFrom(runtimeScene.getObjects("BasketTrigger"));
+gdjs.GameCode.GDDebugButtonObjects1.createFrom(runtimeScene.getObjects("DebugButton"));
 
 gdjs.GameCode.condition0IsTrue_0.val = false;
+gdjs.GameCode.condition1IsTrue_0.val = false;
+gdjs.GameCode.condition2IsTrue_0.val = false;
 {
-{gdjs.GameCode.conditionTrue_1 = gdjs.GameCode.condition0IsTrue_0;
-gdjs.GameCode.condition0IsTrue_1.val = false;
-gdjs.GameCode.condition1IsTrue_1.val = false;
+gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.input.cursorOnObject(gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDDebugButtonObjects1Objects, runtimeScene, false, false);
+}if ( gdjs.GameCode.condition0IsTrue_0.val ) {
 {
-gdjs.GameCode.condition0IsTrue_1.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(1)) == 6;
-}if ( gdjs.GameCode.condition0IsTrue_1.val ) {
+gdjs.GameCode.condition1IsTrue_0.val = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
+}if ( gdjs.GameCode.condition1IsTrue_0.val ) {
 {
-gdjs.GameCode.condition1IsTrue_1.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects, gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects, false, runtimeScene, false);
-}}
-gdjs.GameCode.conditionTrue_1.val = true && gdjs.GameCode.condition0IsTrue_1.val && gdjs.GameCode.condition1IsTrue_1.val;
-}
-}if (gdjs.GameCode.condition0IsTrue_0.val) {
-gdjs.GameCode.GDBasketNetObjects1.createFrom(runtimeScene.getObjects("BasketNet"));
-{gdjs.evtTools.sound.playSound(runtimeScene, "..\\..\\Desktop\\Misc\\click.wav", false, 100, 1);
-}{runtimeScene.getGame().getVariables().getFromIndex(0).add(1);
-}{runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(0);
-}{for(var i = 0, len = gdjs.GameCode.GDBasketNetObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDBasketNetObjects1[i].setAnimationFrame(0);
+{gdjs.GameCode.conditionTrue_1 = gdjs.GameCode.condition2IsTrue_0;
+gdjs.GameCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(6671436);
 }
 }}
+}
+if (gdjs.GameCode.condition2IsTrue_0.val) {
+}
 
 }
 
@@ -380,18 +533,28 @@ gdjs.GameCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
 gdjs.GameCode.GDBallObjects1.length = 0;
 gdjs.GameCode.GDBallObjects2.length = 0;
+gdjs.GameCode.GDBallObjects3.length = 0;
 gdjs.GameCode.GDWallObjects1.length = 0;
 gdjs.GameCode.GDWallObjects2.length = 0;
+gdjs.GameCode.GDWallObjects3.length = 0;
 gdjs.GameCode.GDBasketRObjects1.length = 0;
 gdjs.GameCode.GDBasketRObjects2.length = 0;
+gdjs.GameCode.GDBasketRObjects3.length = 0;
 gdjs.GameCode.GDBasketObjects1.length = 0;
 gdjs.GameCode.GDBasketObjects2.length = 0;
+gdjs.GameCode.GDBasketObjects3.length = 0;
 gdjs.GameCode.GDScoreTextObjects1.length = 0;
 gdjs.GameCode.GDScoreTextObjects2.length = 0;
+gdjs.GameCode.GDScoreTextObjects3.length = 0;
 gdjs.GameCode.GDBasketTriggerObjects1.length = 0;
 gdjs.GameCode.GDBasketTriggerObjects2.length = 0;
+gdjs.GameCode.GDBasketTriggerObjects3.length = 0;
 gdjs.GameCode.GDBasketNetObjects1.length = 0;
 gdjs.GameCode.GDBasketNetObjects2.length = 0;
+gdjs.GameCode.GDBasketNetObjects3.length = 0;
+gdjs.GameCode.GDDebugButtonObjects1.length = 0;
+gdjs.GameCode.GDDebugButtonObjects2.length = 0;
+gdjs.GameCode.GDDebugButtonObjects3.length = 0;
 
 gdjs.GameCode.eventsList0xb2158(runtimeScene);
 return;
