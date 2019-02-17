@@ -29,6 +29,12 @@ gdjs.GameCode.GDBasketNetObjects3= [];
 gdjs.GameCode.GDDebugButtonObjects1= [];
 gdjs.GameCode.GDDebugButtonObjects2= [];
 gdjs.GameCode.GDDebugButtonObjects3= [];
+gdjs.GameCode.GDBackgroundObjects1= [];
+gdjs.GameCode.GDBackgroundObjects2= [];
+gdjs.GameCode.GDBackgroundObjects3= [];
+gdjs.GameCode.GDHighScoresTextObjects1= [];
+gdjs.GameCode.GDHighScoresTextObjects2= [];
+gdjs.GameCode.GDHighScoresTextObjects3= [];
 
 gdjs.GameCode.conditionTrue_0 = {val:false};
 gdjs.GameCode.condition0IsTrue_0 = {val:false};
@@ -40,7 +46,7 @@ gdjs.GameCode.condition1IsTrue_1 = {val:false};
 gdjs.GameCode.condition2IsTrue_1 = {val:false};
 
 
-gdjs.GameCode.userFunc0x6f9168 = function(runtimeScene) {
+gdjs.GameCode.userFunc0x67c408 = function(runtimeScene) {
 
 function getJsonFromUrl(url) {
 	if (!url) url = location.href;
@@ -72,7 +78,7 @@ function getJsonFromUrl(url) {
 }
 
 console.log(window.location.href)
-// urlData = getJsonFromUrl("https://fiercedlight.github.io/Ballspin/index?imid=BAAAAJDGAACH6JsQ6vN1od2P6Z0&uid=278653063#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DNLyMVzXw-EEsLuuxxguh9UAeI2G7fKbNA11DIf5kc0M")
+// urlData = getJsonFromUrl("https://fiercedlight.github.io/Ballspin/index?imid=BAAAAOcfAABnMdq9Mw0JDrg6W4E&uid=278653063#tgShareScoreUrl=tg%3A%2F%2Fshare_game_score%3Fhash%3DLh-ki5S_JODxwalSnsGUgZQAWiWZ2Ka7uBhJnV67l30")
 urlData = getJsonFromUrl(window.location.href)
 
 var imid =runtimeScene.getVariables().get("imid")
@@ -81,21 +87,47 @@ var uid =runtimeScene.getVariables().get("uid")
 imid.setString(urlData.imid)
 uid.setString(urlData.uid)
 
+const getScoreHttp = new XMLHttpRequest();
+const url2 = "https://api.telegram.org/bot709214656:AAGEOTZGdqU1_tsweWY6a23SuOtMcFC0E-I/getGameHighScores";
+var data2 = JSON.stringify({
+	"user_id": runtimeScene.getVariables().get("uid")._str,
+	"inline_message_id":runtimeScene.getVariables().get("imid")._str
+});
+var scores;
+getScoreHttp.open("POST", url2);
+getScoreHttp.setRequestHeader("Content-Type", "application/json");
+getScoreHttp.send(data2);
+getScoreHttp.onreadystatechange = (e) => {
+	scores = JSON.parse(getScoreHttp.responseText)
+	console.log(scores.result[0])
+	var highStr = ""
+	var i
+	
+	for (i = 0; i < scores.result.length; i++) {
+		console.log(i)
+		console.log(scores.result[i].user.first_name)
+		highStr += scores.result[i].position + " " +scores.result[i].user.first_name +" ".repeat(15-scores.result[i].user.first_name.length)+ scores.result[i].score+"\n";
+	}
+	var hscores =runtimeScene.getVariables().get("hscores")
+	console.log(highStr)
+	hscores.setString(highStr)
+}
+
 
 
 };
-gdjs.GameCode.eventsList0x6f8a90 = function(runtimeScene) {
+gdjs.GameCode.eventsList0x6950a0 = function(runtimeScene) {
 
 {
 
 
-gdjs.GameCode.userFunc0x6f9168(runtimeScene);
+gdjs.GameCode.userFunc0x67c408(runtimeScene);
 
 }
 
 
-}; //End of gdjs.GameCode.eventsList0x6f8a90
-gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketObjects2Objects = Hashtable.newFrom({"Basket": gdjs.GameCode.GDBasketObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketRObjects2Objects = Hashtable.newFrom({"BasketR": gdjs.GameCode.GDBasketRObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects1});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects = Hashtable.newFrom({"BasketTrigger": gdjs.GameCode.GDBasketTriggerObjects1});gdjs.GameCode.userFunc0x6fbef0 = function(runtimeScene) {
+}; //End of gdjs.GameCode.eventsList0x6950a0
+gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketObjects2Objects = Hashtable.newFrom({"Basket": gdjs.GameCode.GDBasketObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects2Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketRObjects2Objects = Hashtable.newFrom({"BasketR": gdjs.GameCode.GDBasketRObjects2});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBallObjects1Objects = Hashtable.newFrom({"Ball": gdjs.GameCode.GDBallObjects1});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBasketTriggerObjects1Objects = Hashtable.newFrom({"BasketTrigger": gdjs.GameCode.GDBasketTriggerObjects1});gdjs.GameCode.userFunc0x67ea28 = function(runtimeScene) {
 
 // https://api.telegram.org/bot709214656:AAGEOTZGdqU1_tsweWY6a23SuOtMcFC0E-I/getGameHighScores
 
@@ -119,19 +151,33 @@ var data2 = JSON.stringify({
 	"user_id": runtimeScene.getVariables().get("uid")._str,
 	"inline_message_id":runtimeScene.getVariables().get("imid")._str
 });
+var scores;
 getScoreHttp.open("POST", url2);
 getScoreHttp.setRequestHeader("Content-Type", "application/json");
 getScoreHttp.send(data2);
 getScoreHttp.onreadystatechange = (e) => {
-	// scores = JSON.parse(getScoreHttp.responseText)
-	console.log(getScoreHttp.responseText)
+	scores = JSON.parse(getScoreHttp.responseText)
+	console.log(scores.result[0])
+	var highStr = ""
+	var i
+	
+	for (i = 0; i < scores.result.length; i++) {
+		console.log(i)
+		console.log(scores.result[i].user.first_name)
+		highStr += scores.result[i].position + " " +scores.result[i].user.first_name +" ".repeat(15-scores.result[i].user.first_name.length)+ scores.result[i].score+"\n";
+	}
+	var hscores =runtimeScene.getVariables().get("hscores")
+	console.log(highStr)
+	hscores.setString(highStr)
 }
 
 
 
 
+
+
 };
-gdjs.GameCode.eventsList0x6fb488 = function(runtimeScene) {
+gdjs.GameCode.eventsList0x6d0820 = function(runtimeScene) {
 
 {
 
@@ -172,12 +218,12 @@ gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(ru
 {
 
 
-gdjs.GameCode.userFunc0x6fbef0(runtimeScene);
+gdjs.GameCode.userFunc0x67ea28(runtimeScene);
 
 }
 
 
-}; //End of gdjs.GameCode.eventsList0x6fb488
+}; //End of gdjs.GameCode.eventsList0x6d0820
 gdjs.GameCode.eventsList0xb2158 = function(runtimeScene) {
 
 {
@@ -189,7 +235,7 @@ gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegin
 }if (gdjs.GameCode.condition0IsTrue_0.val) {
 
 { //Subevents
-gdjs.GameCode.eventsList0x6f8a90(runtimeScene);} //End of subevents
+gdjs.GameCode.eventsList0x6950a0(runtimeScene);} //End of subevents
 }
 
 }
@@ -281,7 +327,7 @@ gdjs.GameCode.GDBallObjects1.createFrom(runtimeScene.getObjects("Ball"));
     gdjs.GameCode.GDBallObjects1[i].getBehavior("Physics2").setLinearVelocityX(0);
 }
 }{for(var i = 0, len = gdjs.GameCode.GDBallObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDBallObjects1[i].setPosition(10,20);
+    gdjs.GameCode.GDBallObjects1[i].setPosition(10,10);
 }
 }}
 
@@ -320,7 +366,7 @@ if (gdjs.GameCode.condition1IsTrue_0.val) {
 gdjs.GameCode.GDBallObjects1.createFrom(runtimeScene.getObjects("Ball"));
 {runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(4);
 }{for(var i = 0, len = gdjs.GameCode.GDBallObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDBallObjects1[i].getBehavior("Physics2").setAngularVelocity((gdjs.GameCode.GDBallObjects1[i].getBehavior("Physics2").getAngularVelocity()) + 30);
+    gdjs.GameCode.GDBallObjects1[i].getBehavior("Physics2").setAngularVelocity(gdjs.GameCode.GDBallObjects1[i].getBehavior("Physics2").getAngularVelocity() + (1000 * gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));
 }
 }}
 
@@ -347,7 +393,7 @@ gdjs.GameCode.GDBasketTriggerObjects1.createFrom(runtimeScene.getObjects("Basket
     gdjs.GameCode.GDBasketRObjects1[i].setPosition((( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointX("")) + 16 + 32 + (80 / (gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)) + 3)),(( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointY("")));
 }
 }{for(var i = 0, len = gdjs.GameCode.GDBasketNetObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDBasketNetObjects1[i].setPosition((( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointX("")) + (40 / (gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)) + 3)),(( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointY("")) - 8);
+    gdjs.GameCode.GDBasketNetObjects1[i].setPosition((( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointX("")) + (40 / (gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)) + 3)),(( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointY("")) - 5);
 }
 }{for(var i = 0, len = gdjs.GameCode.GDBasketTriggerObjects1.length ;i < len;++i) {
     gdjs.GameCode.GDBasketTriggerObjects1[i].setPosition((( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointX("")) + 16 + (40 / (gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)) + 3)),(( gdjs.GameCode.GDBasketObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDBasketObjects1[0].getPointY("")) + 14);
@@ -452,6 +498,19 @@ if (gdjs.GameCode.condition1IsTrue_0.val) {
 
 
 {
+gdjs.GameCode.GDHighScoresTextObjects1.createFrom(runtimeScene.getObjects("HighScoresText"));
+{for(var i = 0, len = gdjs.GameCode.GDHighScoresTextObjects1.length ;i < len;++i) {
+    gdjs.GameCode.GDHighScoresTextObjects1[i].setString(gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().getFromIndex(4)));
+}
+}}
+
+}
+
+
+{
+
+
+{
 gdjs.GameCode.GDScoreTextObjects1.createFrom(runtimeScene.getObjects("ScoreText"));
 {for(var i = 0, len = gdjs.GameCode.GDScoreTextObjects1.length ;i < len;++i) {
     gdjs.GameCode.GDScoreTextObjects1[i].setString(gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().getFromIndex(0)));
@@ -512,7 +571,7 @@ gdjs.GameCode.GDBasketNetObjects1.createFrom(runtimeScene.getObjects("BasketNet"
 }
 }
 { //Subevents
-gdjs.GameCode.eventsList0x6fb488(runtimeScene);} //End of subevents
+gdjs.GameCode.eventsList0x6d0820(runtimeScene);} //End of subevents
 }
 
 }
@@ -547,6 +606,12 @@ gdjs.GameCode.GDBasketNetObjects3.length = 0;
 gdjs.GameCode.GDDebugButtonObjects1.length = 0;
 gdjs.GameCode.GDDebugButtonObjects2.length = 0;
 gdjs.GameCode.GDDebugButtonObjects3.length = 0;
+gdjs.GameCode.GDBackgroundObjects1.length = 0;
+gdjs.GameCode.GDBackgroundObjects2.length = 0;
+gdjs.GameCode.GDBackgroundObjects3.length = 0;
+gdjs.GameCode.GDHighScoresTextObjects1.length = 0;
+gdjs.GameCode.GDHighScoresTextObjects2.length = 0;
+gdjs.GameCode.GDHighScoresTextObjects3.length = 0;
 
 gdjs.GameCode.eventsList0xb2158(runtimeScene);
 return;
