@@ -240,7 +240,7 @@ button {
     color: #060606;
 }
 .contact_menu li a:hover{
-    color: #0c426e;
+    color: #97570f;
 }
 img.padding_right_10 {
     padding-right: 20px;
@@ -371,11 +371,11 @@ img.padding_right_10 {
 }
 .quote_bt a:hover{ 
     color: #fafafa; 
-    background-color: #0c426e;
+    background-color: #97570f;
 }
 .quote_bt.active a{ 
     color: #fafafa; 
-    background-color: #0c426e;
+    background-color: #97570f;
 }
 .contact_bt {
     width: 180px;
@@ -394,7 +394,7 @@ img.padding_right_10 {
 }
 .contact_bt a:hover{ 
     color: #fafafa; 
-    background-color: #0c426e;
+    background-color: #97570f;
 }
 
 
@@ -424,7 +424,7 @@ img.padding_right_10 {
 #main_slider .carousel-control-next:hover,
 #main_slider .carousel-control-prev:focus,
 #main_slider .carousel-control-next:focus {
-    background: #0c426e;
+    background: #97570f;
     color: #ffffff;
 }
 /* banner section end */
@@ -500,7 +500,7 @@ img.padding_right_10 {
     padding-top: 20px;
 }
 .seemore_bt a:hover{
-    color: #0c426e;
+    color: #97570f;
 }
 .image_1{
     width: 100%;
@@ -523,7 +523,9 @@ img.padding_right_10 {
 .providing_section_2{
     width: 100%;
     float: left;
-    background-image: url(../images/img-4.png);
+    background-image: url(../arican_images/sinifdark.jpg);
+    /* filter: brightness(0.3); */
+    background-size: cover;
     height: auto;
     background-repeat: no-repeat;
     padding: 90px 0px;
@@ -590,7 +592,7 @@ img.padding_right_10 {
     padding: 40px 20px;
 }
 .choose_box:hover{
-    background-color: #0c426e;
+    background-color: #97570f;
 }
 .choose_box:hover .number_text{
     color: #ffffff;
@@ -610,9 +612,9 @@ img.padding_right_10 {
     width: 40px;
     height: 35px;
     font-size: 16px;
-    color: #0c426e;
+    color: #97570f;
     border-radius: 100%;
-    border: 1px solid #0c426e;
+    border: 1px solid #97570f;
     text-align: center;
     padding: 5px 0px;
     font-weight: 600;
@@ -621,7 +623,7 @@ img.padding_right_10 {
     width: 100%;
     float: left;
     font-size: 16px;
-    color: #0c426e;
+    color: #97570f;
     padding-left: 20px;
     padding-top: 5px;
     font-weight: 600;
@@ -707,7 +709,7 @@ img.padding_right_10 {
     width: 100%;
     float: left;
     font-size: 14px;
-    color: #0c426e;
+    color: #97570f;
     margin: 0px;
     padding-left: 20px;
 }
@@ -721,7 +723,7 @@ img.padding_right_10 {
     position: absolute;
     right: 40px;
     top: 33%;
-    background: #0c426e;
+    background: #97570f;
     color: #ffffff;
 }
 
@@ -740,7 +742,7 @@ img.padding_right_10 {
 #my_slider .carousel-control-next:hover, 
 #my_slider .carousel-control-prev:focus, 
 #my_slider .carousel-control-next:focus {
-    background: #0c426e;
+    background: #97570f;
     color: #ffffff;}
 
 /* testimonial section end */
@@ -808,7 +810,7 @@ input.Enter_text::placeholder {
     float: left;
     font-size: 18px;
     color: #ffffff;
-    background-color: #0c426e;
+    background-color: #97570f;
     text-align: center;
     padding: 8px 0px;
     text-transform: uppercase;
@@ -895,7 +897,7 @@ input.Enter_text::placeholder {
 
 .facebookBtn:hover {
     color: #ffffff;
-    background: #0c426e;
+    background: #97570f;
 }
 
 
@@ -913,7 +915,7 @@ input.Enter_text::placeholder {
 
 .twitterBtn:hover {
     color: #ffffff;
-    background: #0c426e;
+    background: #97570f;
 }
 
 
@@ -925,13 +927,13 @@ input.Enter_text::placeholder {
 
 .instagramBtn:before {
     font-family: "FontAwesome";
-    content: "\f0d5";
+    content: "\f16d";
     /* add instagrm icon */
 }
 
 .instagramBtn:hover {
     color: #ffffff;
-    background: #0c426e;
+    background: #97570f;
 }
 
 
@@ -949,7 +951,7 @@ input.Enter_text::placeholder {
 
 .linkedinBtn:hover {
     color: #ffffff;
-    background: #0c426e;
+    background: #97570f;
 }
 
 
@@ -981,7 +983,7 @@ input.Enter_text::placeholder {
     color: #fffcf4; 
 }
 .copyright_text a:hover { 
-    color: #0c426e; 
+    color: #97570f; 
 }
 
 .margin_top_90{
