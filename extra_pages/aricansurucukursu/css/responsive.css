@@ -139,7 +139,7 @@
         top: 102%;
     }
 .logo {
-    width: 10%;
+    width: 50%;
 }
 .header_section {
      background-size: cover;
@@ -202,7 +202,7 @@
         display: none;
     }
 .logo {
-    width: 70px;
+    width: 500px;
 }
 .header_section {
      background-size: cover;
@@ -272,7 +272,7 @@
         display: none;
     }
     .logo {
-        width: 70px;
+        width: 500px;
     }
     .header_section {
         background-size: cover;
@@ -359,7 +359,7 @@
         display: none;
     }
     .logo {
-        width: 70px;
+        width: 500px;
     }
     .header_section {
         background-size: cover;
