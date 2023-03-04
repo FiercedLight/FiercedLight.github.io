@@ -1,0 +1,26 @@
+.choose_box {
+    width: 100%;
+    padding: 40px 20px;
+    color: #ffffff;
+    height: 100%;
+}
+.choose_box:hover{
+    background: #97570f !important;
+}
+.choose_box:hover .number_text{
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.choose_box:hover .trusted_text{
+    color: #ffffff;
+}
+.choose_box:hover .dummy_text{
+    color: #ffffff;
+}
+
+.contact_bt{
+    transition: all 0.5s;
+}
+.contact_bt:hover{
+    color: #ffd666 !important;
+}

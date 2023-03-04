@@ -5,13 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Arıcan Sürücü Kursu</title>
+  <title>ZenBlog Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/arican_images/logosmall.png" rel="icon">
-  <link href="assets/arican_images/logosmall.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +51,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="about.html">Hakkımızda</a></li>
-          <li><a href="index.html">E-Sınav</a></li> <!-- TODO -->
+          <li><a href="eexam.html">E-Sınav</a></li>
           <li><a href="req.html">Gerekli Belgeler</a></li>
           <li class="dropdown"><a><span>Ehliyet Sınıfları</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -75,45 +77,70 @@
 
   <main id="main">
 
-    <!-- ======= başlık Section ======= -->
-    <section class="category-section">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header d-flex justify-content-between align-items-center mb-5">
-          <h2 style="width: 100%; text-align:center;">Kayıt için gerekli evraklar</h2>
-        </div>
-
+    <!-- ======= Hero Slider Section ======= -->
+    <section id="hero-slider" class="hero-slider">
+      <div class="container-md" data-aos="fade-in">
         <div class="row">
-          <p class="services_text" style="font-size: 1.3em;">
-            Detaylı bilgiyi her zaman bize ulaşarak alabilirsiniz. Gerekli evraklarınızı topladıktan sonra hangi ehliyet
-            türüne başvuracağınızı seçebilirsiniz.
-          </p>
-        </div>
-      </div>
-    </section><!-- End başlık Section -->
+          <div class="col-12">
+            <div class="swiper sliderFeaturedPosts">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="single-post.html" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/arican_images/ehliyet.jpg');">
+                    <div class="img-bg-inner">
+                      <h2>Hemen ehliyet sahibi olun!</h2>
+                      <p>B (Otomatik/Manuel) / B1 / B Engelli Otomobil Ehliyeti <br>
+                        A / A2 / A1 Motosiklet Ehliyeti</p>
+                    </div>
+                  </a>
+                </div>
 
-    <!-- ======= Gerekli Belgelers Section ======= -->
-    <section class="category-section"
-      style="background: url('assets/arican_images/documents.png'); background-size: cover;">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
+                <div class="swiper-slide">
+                  <a href="single-post.html" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/arican_images/b1sonkayit.jpg');">
+                    <div class="img-bg-inner">
+                      <h2>Whatsapp üzerinden kayıt olun!</h2>
+                      <p>Evinizden çıkmadan hızlıca kursa kaydolabilirsiniz<br>
+                        Whatsapp numaramız : +90 507 186 3333</p>
+                    </div>
+                  </a>
+                </div>
 
-        <div class="section-header d-flex justify-content-between align-items-center mb-5">
-          <h2 style="width: 100%; text-align:center;color: white;">Gerekli Belgeler</h2>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <ul style="font-size: 1.7em;color: white;">
-              - 1 Adet Biyometrik Fotoğraf <br>
-              - Kimlik Fotokopisi <br>
-              - Öğrenim belgesi (Diploma) <br>
-              - Sabıka kaydı (e-devlet) <br>
-              - Sağlık raporu (Aile hekimi) <br>
-              <p></p>
-            </ul>
+                <div class="swiper-slide">
+                  <a href="single-post.html" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/arican_images/pedal.jpg');">
+                    <div class="img-bg-inner">
+                      <h2>Sıkça Sorulan Sorular</h2>
+                      <p>Kurs fiyatları, Gerekli belgeler, Ehliyet türleri hakkında bilgi</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="single-post.html" class="img-bg d-flex align-items-end"
+                    style="background-image: url('assets/arican_images/motosiklet-ehliyeti-a-sinifi.jpg);">
+                    <div class="img-bg-inner">
+                      <h2>Motosiklet</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem neque est mollitia! Beatae
+                        minima assumenda repellat harum vero, officiis ipsam magnam obcaecati cumque maxime inventore
+                        repudiandae quidem necessitatibus rem atque.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="custom-swiper-button-next">
+                <span class="bi-chevron-right"></span>
+              </div>
+              <div class="custom-swiper-button-prev">
+                <span class="bi-chevron-left"></span>
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
         </div>
       </div>
-    </section><!-- End Gerekli Belgelers Section -->
+    </section><!-- End Hero Slider Section -->
 
     <!-- ======= Culture Category Section ======= -->
     <section class="category-section">
@@ -143,7 +170,7 @@
             </a>
           </div>
           <div class="col-md-4">
-            <a href="./car.html">
+            <a href="./moto.html">
               <div class="choose_box"
                 style="background:url('assets/arican_images/car_back.jpg'); background-size: cover;">
                 <div class="number_1">
@@ -155,7 +182,7 @@
             </a>
           </div>
           <div class="col-md-4">
-            <a href="./bus.html">
+            <a href="./moto.html">
               <div class="choose_box"
                 style="background:url('assets/arican_images/bus_back.jpg'); background-size: cover;">
                 <div class="number_1">
@@ -169,6 +196,47 @@
         </div>
       </div>
     </section><!-- End Culture Category Section -->
+
+    <!-- ======= iletişim Section ======= -->
+    <section class="category-section"
+      style="background: url('assets/arican_images/iletisim_back.jpg'); background-size: cover;">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header d-flex justify-content-between align-items-center mb-5">
+          <h2 style="width: 100%; text-align:center;color: white;">Bize Ulaşın</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <ul style="font-size: 1.7em;">
+              <li><a class="contact_bt" href="tel:+90 312 229 5999" style="color: white;"><span
+                    class="bi-telephone-fill" style="margin-right: 0.5em; color: #f00;"></span>+90 312 229 5999</a></li>
+              <li><a class="contact_bt" href="tel:+90 507 186 3333" style="color: white;"><span class="bi-phone-fill"
+                    style="margin-right: 0.5em; color: #2af;"></span>+90 507 186 3333</a></li>
+              <li><a class="contact_bt" href="https://www.instagram.com/arican.surucukursu/" style="color: white;"><span
+                    class="bi-instagram" style="margin-right: 0.5em; color: #f3b;"></span>Instagramdan takip edin!</a>
+              </li>
+              <li><a class="contact_bt" href="https://wa.me/905071863333" style="color: white;"><span
+                    class="bi-whatsapp" style="margin-right: 0.5em; color: #0ff;"></span>Whatsapp'dan yazın!</a>
+              </li>
+
+              <li><a class="contact_bt" href="mailto:aricansurucukursu@gmail.com" style="color: white;"><span
+                    class="bi-envelope" style="margin-right: 0.5em; color: rgb(212, 209, 0);"></span>Email ile
+                  ulaşın!</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-8" style="position:relative;overflow:hidden;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.6669388240266!2d32.844749315671166!3d39.92646909323299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f5cf83d4a53%3A0xc393535ca0e3da2!2zw5Z6ZWwgQXLEsWNhbiBTw7xyw7xjw7wgS3Vyc3U!5e0!3m2!1sen!2str!4v1676131151135!5m2!1sen!2str"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              width="100%" height="300em"></iframe>
+            <!-- <iframe src="https://yandex.com.tr/map-widget/v1/-/CCUv44TRGB" allowfullscreen="true"
+                style="position:relative; width: 100%; height: 30em; top:" frameborder="1"></iframe> -->
+          </div>
+        </div>
+      </div>
+    </section><!-- End iletişim Section -->
 
   </main><!-- End #main -->
 
@@ -249,8 +317,7 @@
             <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/arican.surucukursu" class="instagram"><i
-                  class="bi bi-instagram"></i></a>
+              <a href="https://www.instagram.com/arican.surucukursu" class="instagram"><i class="bi bi-instagram"></i></a>
               <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
